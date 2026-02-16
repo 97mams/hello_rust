@@ -47,3 +47,45 @@
 //     println!("{:?}", square);
 //     println!("L'aire du carré est de {}", square.area());
 // }
+
+enum PokemonKind {
+    Fire,
+    Water,
+    Grass
+}
+
+struct Pokemon {
+    name: String,
+    kind: PokemonKind
+}
+
+impl Pokemon {
+    fn attack(&self) {
+        match self.kind {
+            PokemonKind::Fire => println!("{} utilise une attaque de feu !", self.name),
+            PokemonKind::Water => println!("{} utilise une attaque d'eau !", self.name),
+            PokemonKind::Grass => println!("{} utilise une attaque de plante !", self.name)
+        }
+    }
+}
+
+fn main() {
+    let charmander = Pokemon {
+        name: String::from("Charmander"),
+        kind: PokemonKind::Fire
+    };
+
+    let squirtle = Pokemon {
+        name: String::from("Squirtle"),
+        kind: PokemonKind::Water
+    };
+
+    let bulbasaur = Pokemon {
+        name: String::from("Bulbasaur"),
+        kind: PokemonKind::Grass
+    };
+
+    charmander.attack();
+    squirtle.attack();
+    bulbasaur.attack();
+}
