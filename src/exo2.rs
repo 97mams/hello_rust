@@ -16,6 +16,7 @@ impl Task {
     }
 
     pub fn list_tasks(tasks: &[Task]) {
+        println!("Liste des tâches :{:?}", tasks);
     for task in tasks {
         let status = if task.completed { "[X]" } else { "[ ]" };
         println!("{}. {} {}", task.id, task.title, status);
